@@ -80,30 +80,65 @@ public enum tiposValidos {
     ARRAY_DATA("array de data") {
         @Override
         public boolean verificaEnum(String campoValor) {
+            String[] elementos = campoValor.split(",");
+            if (elementos.length == 0) return false;
+            for (String elemento : elementos) {
+                if (!DATA.verificaEnum(elemento)) {
+                    return false;
+                }
+            }
             return true;
         }
     },
     ARRAY_DATA_E_HORA("array de data e hora") {
         @Override
         public boolean verificaEnum(String campoValor) {
+            String[] elementos = campoValor.split(",");
+            if (elementos.length == 0) return false;
+            for (String elemento : elementos) {
+                if (!DATA_E_HORA.verificaEnum(elemento)) {
+                    return false;
+            }
+            }
             return true;
         }
     },
     ARRAY_INTEIROS("array de números inteiros") {
         @Override
         public boolean verificaEnum(String campoValor) {
+            String[] elementos = campoValor.split(",");
+            if (elementos.length == 0) return false;
+            for (String elemento : elementos) {
+                if (!NUMEROS_INTEIROS.verificaEnum(elemento)) {
+                    return false;
+                }
+            }
             return true;
         }
     },
     ARRAY_FLUTUANTES("array de números flutuantes") {
         @Override
         public boolean verificaEnum(String campoValor) {
+            String[] elementos = campoValor.split(",");
+            if (elementos.length == 0) return false;
+            for (String elemento : elementos) {
+                if (!NUMEROS_FLUTUANTES.verificaEnum(elemento)) {
+                    return false;
+                }
+            }
             return true;
         }
     },
     ARRAY_BOOLEANOS("array de booleanos") {
         @Override
         public boolean verificaEnum(String campoValor) {
+            String[] elementos = campoValor.split(",");
+            if (elementos.length == 0) return false;
+            for (String elemento : elementos) {
+                if (!BOOLEANOS.verificaEnum(elemento)) {
+                    return false;
+                }
+            }
             return true;
         }
     };
