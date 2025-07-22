@@ -28,7 +28,7 @@ public class main1 {
 
                 tiposValidos tipoEnum = tiposValidos.fromString(campoTipo);
 
-                if (tipoEnum != null) {
+                if (tipoEnum != null) { 
                     if (tipoEnum.verificaEnum(campoValor)) {
                         Map<String, String> dadoEstruturado = new HashMap<>();
                         dadoEstruturado.put("nome", partes[0]);
@@ -49,6 +49,7 @@ public class main1 {
         System.out.println(formataYMAL(dados));
         System.out.println("===Formato XML===");
         System.out.println(formataXML(dados));
+        scanner.close();
     }
 
     public static boolean verificaSeparador(String entrada_dados, String separador) {
